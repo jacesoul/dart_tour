@@ -1,7 +1,8 @@
 void main() {
-  dynamic name;
-  if(name is String){
+  String? jace = "jace";
+  jace = null;
+  if (jace != null) {
+    jace.isNotEmpty;
   }
-  if(name is int){
-  }
+  jace?.isNotEmpty;
 }
