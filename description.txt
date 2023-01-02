@@ -30,3 +30,4 @@
 - dynamic은 정말로 필요할 때만 써야한다.
 - null safety는 개발자가 null 값을 참조 할수 없도록 하는것이다. 
 - 기본적으로 모든 변수는 non-nullable이다. 
+- final은 javascript의 const와 동일하다.
