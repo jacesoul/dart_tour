@@ -1,3 +1,5 @@
 void main() {
-  final name = "jace";
+  late final String name;
+  // do something, go to api
+  name = "jace";
 }
