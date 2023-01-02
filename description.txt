@@ -33,3 +33,8 @@
 - final은 javascript의 const와 동일하다.
 - late는 final이나 var 앞에 붙여줄수 있는 수식어이다. 
 - late은 초기 데이터 없이 변수를 선언할 수 있게 해준다. 
+- dart의 const는 javascript와 다르다. javascript의 const는 dart의 final과 비슷하다. 
+- dart에서 const는 compile-time constant를 만들어준다.
+- const는 컴파일 할 때 알고 있는 값에 사용한다.
+- 만약 앱스토어에 앱을 올리기 전에 값을 알고 있다면 그건 const가 된다.
+- 어떤 값인지 모르고, 그 값이 API로부터 온다거나 사용자가 화면에서 입력해야 하는 값이라면 그건 final이나 var가 되어야한다.
