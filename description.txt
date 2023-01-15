@@ -44,3 +44,5 @@
 ### DATA TYPES
 - 모든 자료형들이 object로 이루어져있다. 이게 Dart가 진정한 객체 지향 언어로 불리는 까닭이다.
 - num 자료형을 사용하면 그 숫자는 integer일 수 있고 double일 수도 있다.
+- Dart의 List는 collection if와 collection for을 지원한다. 
+- collection if로는 List를 만들수 있는데 if로 존재할 수도 안할 수도 있는 요소를 가지고 만들 수 있다.
