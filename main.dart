@@ -1,10 +1,10 @@
-String sayHello(String name, int age, [String? country = "korea"]) =>
-    "Hello $name, you are $age, and you come from $country";
+String capitalizeName(String? name) => name?.toUpperCase() ?? "ANON";
 
 void main() {
-  var results = sayHello(
-    "jace",
-    23,
-  );
-  print(results);
+  capitalizeName('jace');
+  capitalizeName(null);
+
+  String? name;
+  name ??= "jace"; // name이 null일때 jace의 값을 넣어줌
+  print(name);
 }

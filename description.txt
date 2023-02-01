@@ -59,3 +59,5 @@
 ### FUNCTIONS
 - void는 이 함수가 아무것도 return 하지 않는다는 의미이다. 
 - positional parameter는 순서에 맞취서 입력해야한다. 
+- question question operator(QQ)
+- left ?? right 에서 만약 left가 null이면 right를 리턴한다. left가 null이 아니면 그대로 left를 return 하는것이다. 
