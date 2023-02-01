@@ -61,3 +61,4 @@
 - positional parameter는 순서에 맞취서 입력해야한다. 
 - question question operator(QQ)
 - left ?? right 에서 만약 left가 null이면 right를 리턴한다. left가 null이 아니면 그대로 left를 return 하는것이다. 
+- Typedef는 자료형이 헷갈릴때 도움이 될 alias를 만드는 방법이다. 
