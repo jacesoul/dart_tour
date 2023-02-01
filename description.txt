@@ -62,3 +62,8 @@
 - question question operator(QQ)
 - left ?? right 에서 만약 left가 null이면 right를 리턴한다. left가 null이 아니면 그대로 left를 return 하는것이다. 
 - Typedef는 자료형이 헷갈릴때 도움이 될 alias를 만드는 방법이다. 
+
+### CLASSES
+- Class에서 property를 선언할때는 타입을 사용해서 정의한다. 
+- Class를 생성할때는 타입을 꼭 명시해줘야한다. 
+- Dart의 클래스에서는 this를 사용할 필요가 없다.
