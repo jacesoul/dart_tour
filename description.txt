@@ -58,3 +58,4 @@
 
 ### FUNCTIONS
 - void는 이 함수가 아무것도 return 하지 않는다는 의미이다. 
+- positional parameter는 순서에 맞취서 입력해야한다. 
