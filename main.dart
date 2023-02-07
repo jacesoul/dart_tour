@@ -1,35 +1,29 @@
-abstract class Human {
-  void walk();
-}
+class Human {
+  final String name;
 
-enum Team { red, blue }
+  // 생성자 함수
+  Human(this.name);
 
-enum XPLevel { beginner, medium, pro }
-
-class Player extends Human {
-  String name;
-  XPLevel xp;
-  Team team;
-
-  void walk() {
-    print("im walking");
-  }
-
+  // 메소드
   void sayHello() {
     print("Hi my name is $name");
   }
 }
 
-class Coach extends Human {
-  void walk() {
-    print("hello");
+enum Team { blue, red }
+
+class Player extends Human {
+  final Team team;
+
+  Player({required this.team, required String name}) : super(name);
+
+  @override
+  void sayHello() {
+    super.sayHello();
+    print('and I play for ${team}');
   }
 }
 
 void main() {
-  var jace = Player(name: "jace", xp: XPLevel.beginner, team: Team.red)
-    ..name = "rupino"
-    ..xp = XPLevel.pro
-    ..team = Team.blue
-    ..sayHello();
+  var player = Player(team: Team.red, name: "jace");
 }
