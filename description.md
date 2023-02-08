@@ -1,0 +1,77 @@
+## dart가 좋은 첫번째 이유
+
+- JIT → just-in-time
+  - dart VM을 사용하는데 내가 쓴 코드의 결과를 바로 화면에 보여준다.
+- AOT → ahead-of-time
+
+  - 컴파일을 먼저하고, 그 결과인 바이너리를 배포한다. 그건 CPU가 이해할 수 있는 기계어와 같은것들이다.
+  - IOS, Android, Windows, Mac 등을 위해 컴파일 한다는건 시간이 오래 걸린다. 왜냐면 컴파일러는 아주 많은 최적화를 해야하고 나의 코드를 기계어로 바꿔야하는 등 하는 일이 많다.
+
+- 개발 도중에는 내가 쓴 코드를 dart 가상 머신에서 실행시킨다. dart 가상 머신은 그 코드를 just-in-time으로 컴파일해주고 이건 가상 머신에서 코드가 돌아가고 있다는 거니까 조금 느리게 돌아가겠지만 이부분은 개발중에 내가 한 걸 화면에 바로 피드백을 받고 싶기 때문에 괜찮다.
+- 하지만 코딩을 다 했다면 배포시에 dart에게 우리 코드를 ahead-of-tim으로 컴파일해달라고 부탁한다. 이건 우리가 쓴 코드가 실제 기계어로 변환될 거라는 말이고 우리 앱을 더 빠르게 만들어준다.
+- 이러한 특징은 많은 프로그래밍 언어가 가진건 아니다.
+- 모바일 개발에는 아주 중요하고 또 멋진 특징이다.
+- 이건 dart가 개발하기에 또는 배포하기에 특별하고 좋은 언어인 이유이다.
+
+## dart가 좋은 두번째 이유
+
+- null safety는 안전한 프로그램을 빌드할 때 아주 중요하다.
+- dart는 Null safetyf를 도입했고 그게 프로그램을 더 안전하게 만들어 준다.
+
+### INSTALL DART
+
+- brew tap dart-lang/dart
+- brew install dart
+
+### VARIABLES
+
+- main 함수는 모든 Dart 프로그램의 Entry point이기 때문에 아주 중요하다.
+- 모든 코드는 main 함수 안에 들어가야 한다.
+- 끝에 세미콜론(;)을 꼭 넣어줘야한다.
+- 관습적으로 함수나 메소드 내부에 지역 변수를 선언할 때에는 var를 사용한다.
+- class에서 변수나 property를 선언할 때에는 타입을 지정해준다.
+- var를 쓰던 String을 쓰던 어떤 경우든 변수는 업데이트 할 수 있다.
+- dynamic은 여러가지 타입을 가질수 있는 변수에 쓰는 키워드이다.
+- dynamic은 정말로 필요할 때만 써야한다.
+- null safety는 개발자가 null 값을 참조 할수 없도록 하는것이다.
+- 기본적으로 모든 변수는 non-nullable이다.
+- final은 javascript의 const와 동일하다.
+- late는 final이나 var 앞에 붙여줄수 있는 수식어이다.
+- late은 초기 데이터 없이 변수를 선언할 수 있게 해준다.
+- dart의 const는 javascript와 다르다. javascript의 const는 dart의 final과 비슷하다.
+- dart에서 const는 compile-time constant를 만들어준다.
+- const는 컴파일 할 때 알고 있는 값에 사용한다.
+- 만약 앱스토어에 앱을 올리기 전에 값을 알고 있다면 그건 const가 된다.
+- 어떤 값인지 모르고, 그 값이 API로부터 온다거나 사용자가 화면에서 입력해야 하는 값이라면 그건 final이나 var가 되어야한다.
+- String name 처럼 타입을 사용하는 방식은 class의 property를 작성할때 사용되는게 권장된다.
+- 메소드나 작은 함수 안에서 지역변수를 선언할 때는 var를 사용하는게 더 좋다. 어차피 컴파일러가 변수의 타입을 추론하기 때문이다. 굳이 구체화하지 않아도 괜찮다.
+
+### DATA TYPES
+
+- 모든 자료형들이 object로 이루어져있다. 이게 Dart가 진정한 객체 지향 언어로 불리는 까닭이다.
+- num 자료형을 사용하면 그 숫자는 integer일 수 있고 double일 수도 있다.
+- Dart의 List는 collection if와 collection for을 지원한다.
+- collection if로는 List를 만들수 있는데 if로 존재할 수도 안할 수도 있는 요소를 가지고 만들 수 있다.
+- String interpolation은 text에 변수를 추가하는 방법이다.
+- String interpolation를 사용하기 위해 큰 따옴표나 작은 따옴표 중에 아무거나 사용해도 되고 원하는 부분에 달러 기호 뒤에 변수 이름만 적어주면 된다.
+- 만약 어떤 계산을 거쳐서 그 결과 값을 구하고 싶다면 달러 기호 뒤에 중괄호를 열고 계산할 내용을 적은 뒤에 중괄호를 닫아주면 된다.
+- Map은 Javascript나 TypeScript의 object, python의 dictionary 같은것이다.
+- Dart에서는 모든게 object로부터 생겨서 object는 기본적으로 어떤 자료형이든지 될수 있다.
+- TypeScript의 any라고 보면된다.
+- key, value를 가지는 구조롤 object를 만들때 그리고 그것들이 특정 형태를 가질 때 class를 사용하는 것이 좋다.
+- Set(sequence)과 List의 차이는 Set에 속한 모든 아이템들은 유니크하다.
+- 요소가 항상 하나씩만 있어야 되면 Set을 사용하면된다.
+
+### FUNCTIONS
+
+- void는 이 함수가 아무것도 return 하지 않는다는 의미이다.
+- positional parameter는 순서에 맞취서 입력해야한다.
+- question question operator(QQ)
+- left ?? right 에서 만약 left가 null이면 right를 리턴한다. left가 null이 아니면 그대로 left를 return 하는것이다.
+- Typedef는 자료형이 헷갈릴때 도움이 될 alias를 만드는 방법이다.
+
+### CLASSES
+
+- Class에서 property를 선언할때는 타입을 사용해서 정의한다.
+- Class를 생성할때는 타입을 꼭 명시해줘야한다.
+- Dart의 클래스에서는 this를 사용할 필요가 없다.
